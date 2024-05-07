@@ -54,38 +54,6 @@ class Net(nn.Module):
       main_output = self.main_forward(x)
       out = self.sigmoid_activation(main_output)
       return out
-        
-# Custom dataset class for handling sequences of images
-class ImageSequenceDataset(Dataset):
-    def __init__(self, data, transform=None):
-        self.data = data
-        self.transform = transform
 
-    def __len__(self):
-        return len(self.data)
-
-    def __getitem__(self, idx):
-        sequence = self.data[idx]
-        if self.transform:
-            sequence = [self.transform(image) for image in sequence]
-        return torch.stack(sequence)  # Stack images into a single tensor
-
-# Define the model
-class ImageSequenceClassifier(nn.Module):
-    def __init__(self, num_classes, hidden_size):
-        super(ImageSequenceClassifier, self).__init__()
-        self.cnn = models.resnet18(pretrained=True)
-        self.rnn = nn.LSTM(input_size=self.cnn.fc.in_features, 
-                           hidden_size=hidden_size, 
-                           num_layers=1, 
-                           batch_first=True)
-        self.fc = nn.Linear(hidden_size, num_classes)
-
-    def forward(self, x):
-        batch_size, seq_length, channels, height, width = x.size()
-        x = x.view(batch_size * seq_length, channels, height, width)
-        features = self.cnn(x)
-        features = features.view(batch_size, seq_length, -1)
-        _, (h_n, _) = self.rnn(features)
-        output = self.fc(h_n[-1])
-        return output
+def file_screener(x):
+    return [f'{id}_' in z for z in x]

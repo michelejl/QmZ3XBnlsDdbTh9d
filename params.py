@@ -11,7 +11,7 @@ bs = 16
 lr=0.001
 
 #set the number of epochs
-num_epochs=1
+num_epochs=50
 
 # early stopping patience; how long to wait after last time validation loss improved.
 patience = 7
