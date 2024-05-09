@@ -21,6 +21,14 @@ Success Metrics:
 
 Evaluate model performance based on F1 score, the higher the better.
 
+We got a F1-score of 99%.
+
 Bonus(es):
 
 Predict if a given sequence of images contains an action of flipping.
+
+The overall test accuracy for the sequences of images was found to be 80%.
+
+Conclusion
+
+In this project, we've successfully trained a conventional CNN model achieving a 99% accuracy in distinguishing between flipped and non-flipped images, and an 80% accuracy in categorizing sequences of images. The insights gained from image and video analyses conducted in this project hold significant relevance across a wide range of image classification tasks, offering valuable contributions to various domains requiring such classification capabilities.
