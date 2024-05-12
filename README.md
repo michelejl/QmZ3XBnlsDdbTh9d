@@ -21,13 +21,13 @@ Success Metrics:
 
 Evaluate model performance based on F1 score, the higher the better.
 
-We got a F1-score of 99%.
+We got a F1-score of 98%.
 
 Bonus(es):
 
 Predict if a given sequence of images contains an action of flipping.
 
-The overall test accuracy for the sequences of images was found to be 80%.
+The overall test accuracy for the sequences of images was found to be 97%.
 
 Conclusion
 
